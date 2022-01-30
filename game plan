@@ -1,0 +1,52 @@
+"memory game" game plan
+
+
+1) i click on a card, this becomes card1 ( <div> ) and that cards color changes to the color of its .class.
+    let currentCard = e.target;
+    currentCard.style.backgroundColor = currentCard.classList[0];
+
+
+    a place to store flipped cards. an array
+    let flippedCards = []
+    flippedCards.push(currentcard)
+
+    card1 = flippedCards[0]
+    card2 = flippedCards[1]
+
+    if( card1.className === card2.className){
+    numOfMatches += 2
+
+
+    }else if {
+    card1.style.backgroundColor = ''
+    card2.style.backgroundColor = ''
+
+    }
+
+
+
+
+
+    2)then i chick on another card, this card becomes card2( <div> ), and it and the same thing happens.
+        and if card1 !== card2 .class's,
+        then both their colors !== their class
+
+
+
+
+
+
+
+
+
+
+        3) but i chick on another card( <div> ), and the same thing happens. and if the firstBox and the secondBox ===
+            the same .class , then += 2 is added to filledCards and the cards stayed "flipped over"
+
+
+
+1) add booleen
+2) critically learning
+3) teach myself, know your blind spots 
+4) no distraction while learing
+learing is taking info in and letting it out
