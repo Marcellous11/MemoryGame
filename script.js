@@ -74,9 +74,9 @@ function handleCardClick(e) {
   // probelm with the counter
   // also a probelm with the last line of code #game over probelm
 
-  setTimeout(function () {
+  
     if (card1.className === card2.className) {
-      matchCounter += 1 / 2;
+      matchCounter += 1 ;
       flippedCards.splice(0);
       numOfMatches.innerText = matchCounter;
     } else {
@@ -84,7 +84,7 @@ function handleCardClick(e) {
       card2.style.backgroundColor = "";
       flippedCards.splice(0);
     }
-  }, 1000);
+ 
 
   if (parseInt(numOfMatches.innerText) === 5) {
     alert("Game Completed");
