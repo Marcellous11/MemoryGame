@@ -63,6 +63,7 @@ let flippedCards = [];
 function handleCardClick(e) {
   let currentCard = e.target; //is a element
   currentCard.style.backgroundColor = currentCard.classList[0];
+  console.log(currentCard);
 
   flippedCards.push(currentCard);
   flippedCards.splice(2);
@@ -70,22 +71,25 @@ function handleCardClick(e) {
   card1 = flippedCards[0];
   card2 = flippedCards[1];
 
+  currentCard.classList.toggle("turnedOver");
+
   //  double click probelm
   // probelm with the counter
   // also a probelm with the last line of code #game over probelm
 
-  setTimeout(function () {
-    if (card1.className === card2.className) {
-      matchCounter += 1 / 2;
-      flippedCards.splice(0);
-      numOfMatches.innerText = matchCounter;
-    } else {
-      card1.style.backgroundColor = "";
-      card2.style.backgroundColor = "";
-      flippedCards.splice(0);
-    }
-  }, 1000);
+  if (card1.className.includes("turnedOver")) {
+    currentCard.click(false);
+  } else if (card1.className === card2.className) {
+    matchCounter += 1;
+    flippedCards.splice(0);
+    numOfMatches.innerText = matchCounter;
+  } else {
+    card1.style.backgroundColor = "";
+    card2.style.backgroundColor = "";
+    flippedCards.splice(0);
+  }
 
+  //end of the game
   if (parseInt(numOfMatches.innerText) === 5) {
     alert("Game Completed");
   }
